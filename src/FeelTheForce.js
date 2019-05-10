@@ -1,36 +1,36 @@
 const React = require('react');
 
 class FeelTheForce extends React.Component {
-    constructor(){
-        super();
-        this.myInput = "Charlotte";
-        this.changeHandler = this.changeHandler.bind(this);
-    }
-    forcingRerenderResetingValue(e) {
-        
-        this.changeHandler();
-        this.myInput =  "";
-        setTimeout(() => this.forceUpdate(), 1000);
-    }
-    changeHandler(e){
-        this.myInput =  e.target.value;
-        setTimeout(() => this.forceUpdate(), 500);
-    }
-    render() {
-        return (
-            <>
-            <input 
-                type="text" 
-                value={this.myInput} 
-                onChange={this.changeHandler}
-            />
-            <h1>{this.myInput}</h1>
-            <button onClick={() => this.forcingRerenderResetingValue()}>
-                Reset input
-            </button>
-            </>
-        );
-    }
+  constructor() {
+    super();
+    this.myInput = 'Charlotte';
+    this.changeHandler = this.changeHandler.bind(this);
+  }
+
+  changeHandler(e) {
+    e.target.value === undefined
+      ? this.myInput = ''
+      : this.myInput = e.target.value;
+    setTimeout(() => this.forceUpdate(), 500);
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <input
+          type="text"
+          className="form-control bg-light text-primary"
+          value={this.myInput}
+          onChange={this.changeHandler}
+        />
+        <br />
+        <button className="btn btn-outline-primary" onClick={this.changeHandler}>Reset input</button>
+        <br />
+        <br />
+        <h1 className="display-3 text-light bg-primary">{this.myInput}</h1>
+      </div>
+    );
+  }
 }
 
 export default FeelTheForce;
