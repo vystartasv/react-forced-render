@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="display-1">Test field bellow</h1>
+        <h1 className="display-1">Test field below&#x21e9;</h1>
         <div className="align-items-center">
           <FeelTheForce />
         </div>

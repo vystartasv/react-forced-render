@@ -24,7 +24,7 @@ class FeelTheForce extends React.Component {
           onChange={this.changeHandler}
         />
         <br />
-        <button className="btn btn-outline-primary" onClick={this.changeHandler}>Reset input</button>
+        <button className="btn btn-outline-primary" onClick={this.changeHandler}>Reset the input &#x27F3;</button>
         <br />
         <br />
         <h1 className="display-3 text-light bg-primary">{this.myInput}</h1>
